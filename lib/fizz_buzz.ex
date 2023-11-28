@@ -5,7 +5,11 @@ defmodule FizzBuzz do
   end
 
   defp handle({:ok, file}), do: handle(file)
-  defp handle({:error, reason}), do: {:error, reason}
+
+  defp handle({:error, reason}) do
+    IO.puts("Invalid file: #{reason}")
+    []
+  end
 
   defp handle(file) do
     file
